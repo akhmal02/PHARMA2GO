@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 8.0.44, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: pharma2go
+-- ------------------------------------------------------
+-- Server version	8.0.20
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `receipt_product`
+--
+
+DROP TABLE IF EXISTS `receipt_product`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `receipt_product` (
+  `recProdID` int NOT NULL AUTO_INCREMENT,
+  `receiptID` int NOT NULL,
+  `prodID` int NOT NULL,
+  `qty` int NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`recProdID`),
+  KEY `receiptID` (`receiptID`),
+  KEY `prodID` (`prodID`),
+  CONSTRAINT `receipt_product_ibfk_1` FOREIGN KEY (`receiptID`) REFERENCES `receipt` (`receiptID`),
+  CONSTRAINT `receipt_product_ibfk_2` FOREIGN KEY (`prodID`) REFERENCES `product` (`prodID`)
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `receipt_product`
+--
+
+LOCK TABLES `receipt_product` WRITE;
+/*!40000 ALTER TABLE `receipt_product` DISABLE KEYS */;
+INSERT INTO `receipt_product` VALUES (1,1,1,2,12.50),(2,1,2,1,8.90),(3,2,1,1,12.50),(4,3,3,1,24.50),(5,4,4,1,35.00),(6,4,6,1,14.20),(7,5,2,1,8.90),(8,6,12,2,28.00),(9,6,14,2,22.00),(10,7,11,1,13.50),(11,8,14,1,22.00),(12,9,9,1,9.90),(13,10,4,1,35.00),(14,10,7,1,18.00),(15,11,1,1,12.50),(16,12,4,1,35.00),(17,13,5,1,4.50),(18,14,3,2,24.50),(19,14,15,1,11.00),(20,15,8,1,7.50),(21,16,7,1,18.00),(22,17,12,1,28.00),(23,18,6,1,14.20),(24,19,2,1,8.90),(25,20,14,2,22.00),(26,21,1,1,12.50),(27,22,11,1,13.50),(28,22,9,2,9.90),(29,23,3,1,24.50),(30,24,4,1,35.00),(31,25,13,1,5.50),(32,26,11,1,13.50),(33,27,10,1,6.80),(34,28,14,1,22.00),(35,29,9,1,9.90),(36,30,15,1,11.00),(37,31,12,1,28.00),(38,31,14,1,22.00),(39,32,1,2,12.50),(40,33,1,1,12.50),(41,34,2,1,8.90),(42,35,4,1,35.00),(43,36,7,1,18.00),(44,37,8,1,7.50),(45,38,14,1,22.00),(46,39,5,1,4.50),(47,40,1,1,12.50),(48,40,2,1,8.90),(49,40,3,1,24.50),(50,41,4,1,35.00),(51,41,5,1,4.50),(52,41,2,1,8.90),(53,42,6,1,14.20),(54,42,7,1,18.00),(55,42,17,1,25.90),(56,43,8,1,7.50),(57,43,9,1,9.90),(58,43,10,1,6.80),(59,44,11,1,13.50),(60,44,12,1,28.00),(61,44,13,1,5.50),(62,45,14,1,22.00),(63,45,15,1,11.00),(64,45,9,1,9.90),(65,46,16,1,16.50),(66,46,17,1,25.90),(67,46,1,1,12.50),(68,47,18,1,14.90),(69,47,19,1,19.50),(70,47,18,1,14.90),(71,48,20,1,8.50),(72,48,1,1,12.50),(73,48,16,1,16.50),(74,49,2,1,8.90),(75,49,5,1,4.50),(76,49,3,1,24.50),(77,50,4,1,35.00),(78,50,8,1,7.50),(79,50,13,1,5.50),(80,51,3,2,24.50),(81,52,1,5,12.50),(82,52,2,3,8.90);
+/*!40000 ALTER TABLE `receipt_product` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-02-09 18:11:05

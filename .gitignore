@@ -1,0 +1,13 @@
+# Compiled Java Classes & Build Directories
+*.class
+build/
+pharma/build/
+target/
+
+# Eclipse / IDE Metadata
+.metadata/
+.recommenders/
+.DS_Store
+Thumbs.db
+*.war
+*.ear
